@@ -1,9 +1,22 @@
 {% include 'header.html' %}
 
+<script>
+    function checkpassword() {
+        if(document.signup.psw.value != document.signup.conpsw.value){
+            alert('Password not matched')
+            document.signup.conpsw.focus()
+
+            return false;
+        }
+        return true
+    }
+</script>
+
+
 <div class="card mt-4" style="width: 38rem; margin: 0 auto">
   <h5 class="card-header">Create a New Account</h5>
   <div class="card-body">
-    <form action="#" method="post">
+    <form method="post" name='signup' onsubmit="return checkpassword()">
       {% csrf_token %}
       <div class="row">
         <div class="form-group col-sm-6">
