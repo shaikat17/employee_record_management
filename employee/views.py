@@ -40,7 +40,7 @@ def emp_login(request):
             error = 'No'
         else:
             error = 'Yes'
-    return render(request, 'emp_login.html')
+    return render(request, 'emp_login.html', locals())
 
 def emp_home(request):
     return render(request, 'emp_home.html')
