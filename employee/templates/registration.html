@@ -22,7 +22,7 @@
           <label for="firstname">First Name</label>
           <input
             type="text"
-            name="fisrtname"
+            name="firstname"
             class="form-control"
             id="firstname"
             placeholder="Enter Your First Name"
@@ -45,7 +45,7 @@
         <label for="email">Email</label>
         <input
           type="email"
-          name="fisrtname"
+          name="email"
           class="form-control"
           id="email"
           placeholder="Enter Your Email"
@@ -96,11 +96,10 @@
 
 {% if error == 'No' %}
 <script>
-
   alert('Registration Successfull')
-  window.location= ('{% ur 'emp_login' %}')
+  window.location= ('{% url 'emp_login' %}')
 </script>
-{% else %}
+{% endif %} {% if error == 'Yes' %}
 <script>
   alert("Something went wrong, Try Again...");
 </script>
