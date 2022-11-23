@@ -1,8 +1,7 @@
 {% extends 'emp_base.html' %} {% block main %}
 
-
 <div class="card mt-2">
-  <h5 class="card-header">Profile</h5>
+  <h5 class="card-header text-danger border-bottom border-warning">Profile</h5>
   <div class="card-body">
     <form method="post" name="signup" onsubmit="return checkpassword()">
       {% csrf_token %}
@@ -92,6 +91,4 @@
 <script>
   alert("Something went wrong, Try Again...");
 </script>
-{% endif %}
-
-{% endblock %}
+{% endif %} {% endblock %}
