@@ -1,0 +1,47 @@
+{% include 'header.html' %}
+
+
+<div class="card mt-4" style="width: 38rem; margin: 0 auto">
+  <h5 class="card-header">Employee Login</h5>
+  <div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter Your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="psw">Last Name</label>
+          <input
+            type="password"
+            name="psw"
+            class="form-control"
+            id="psw"
+            placeholder="Enter Your Password"
+            required
+          />
+        </div>
+      <button type="submit" class="btn btn-primary btn-block mt-4">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+
+{% if error == 'No' %}
+<script>
+  alert('Login Successfull')
+  window.location= ('{% url 'emp_home' %}')
+</script>
+{% endif %} {% if error == 'Yes' %}
+<script>
+  alert("Something went wrong, Try Again...");
+</script>
+{% endif %}
